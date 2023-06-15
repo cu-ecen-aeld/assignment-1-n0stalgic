@@ -5,13 +5,13 @@ search_string=$2
 
 if [ -z "$search_dir" ]
 then
-    echo "Search directory not specified!"
+    echo "Search directory not specified!" >> /dev/stderr
     exit 1
 fi
 
 if [ -z "$search_string" ]
 then
-    echo "Search string not specified!"
+    echo "Search string not specified!" >> /dev/stderr
     exit 1
 fi
 
@@ -22,6 +22,6 @@ then
     echo "The number of files are $file_count and the number of matching lines are $match_count"
 
 else
-    echo "Directory specified does not exist!"
+    echo "Directory specified does not exist!" >> /dev/stderr
     exit 1
 fi
